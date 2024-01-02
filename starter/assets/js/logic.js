@@ -27,9 +27,19 @@ function startQuiz() {
     showQuestion();
     startTimer();
 }
+const currentQuestion = questions[currentQuestionIndex];
 
 function showQuestion() {
+  questionTitle.textContent = currentQuestion.title;
+  choices.innerHTML = '';
 
+  currentQuestion.choices.forEach((choice, index) => {
+    const button = document.createElement('button');
+    button.textContent = `${index + 1}. ${choice}`;
+    button.classList.add('choice');
+    button.onclick = () => checkAnswer(index);
+    choices.appendChild(button);
+  });
 }
 
 function checkAnswer(index) {
