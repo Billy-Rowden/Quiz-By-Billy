@@ -82,7 +82,10 @@ function startTimer() {
 };
 
 function endQuiz() {
-
+  clearInterval(timer);
+  hideElement(getElement('questions'));
+  showElement(endScreen);
+  finalScore.textContent = score;
 };
 
 submitButton.addEventListener('click', () => {
