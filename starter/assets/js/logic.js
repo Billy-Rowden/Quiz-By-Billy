@@ -27,9 +27,9 @@ function startQuiz() {
     showQuestion();
     startTimer();
 }
-const currentQuestion = questions[currentQuestionIndex];
 
 function showQuestion() {
+  const currentQuestion = questions[currentQuestionIndex];
   questionTitle.textContent = currentQuestion.title;
   choices.innerHTML = '';
 
@@ -43,6 +43,7 @@ function showQuestion() {
 }
 
 function checkAnswer(index) {
+  const currentQuestion = questions[currentQuestionIndex];
   const correctAnswer = currentQuestion.answer;
   const correctSound = new Audio('./assets/sfx/correct.wav');
   const incorrectSound = new Audio ('./assets/sfx/incorrect.wav')
