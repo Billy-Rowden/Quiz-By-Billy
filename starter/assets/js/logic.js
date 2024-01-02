@@ -71,7 +71,14 @@ function checkAnswer(index) {
 };
 
 function startTimer() {
+  timer = setInterval(() => {
+    timeLeft--;
+    displayTime.textContent = timeLeft;
 
+    if (timeLeft <= 0) {
+      endQuiz();
+    }
+}, 1000);
 };
 
 function endQuiz() {
