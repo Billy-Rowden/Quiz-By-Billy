@@ -1,5 +1,13 @@
-// Need variables for
-// Set of questions --> array of objects
+const startButton = document.getElementById('start');
+const displayTime = doscument.getElementById('time');
+const questionTitle = document.getElementById('question-title');
+const choices = document.getElementById('choices');
+const endScreen = document.getElementById('end-screen');
+const finalScore = document.getElementById('final-score');
+const inputInitials = document.getElementById('initials');
+const submitButton = document.getElementById('submit');
+const feedback = document.getElementById('feedback');
+
 
 // Each question needs the following:
   // Question text
@@ -8,12 +16,12 @@
 
 // Landing page:
   // Explanation of the quiz
-  // Start button -> needs variable
+  // !Start button -> needs variable
 
 // Click the start button:
   // Landing page goes away
-  // Timer starts -> needs variable to display the timer
-  // The first question appears (with its answers) -> need a variable for title of question and a variable for the options
+  // !Timer starts -> needs variable to display the timer
+  // !The first question appears (with its answers) -> need a variable for title of question and a variable for the options
 
 // For each question:
   // User clicks an answer
@@ -27,10 +35,10 @@
   // Timer stops
   // Question disappears
   // Form appears for user to enter their initials
-  // Display their score -> variable for end of quiz screen, for final score
+  // !Display their score -> variable for end of quiz screen, for final score
 
 // User submits form
-  // Initials and score get stored in local storage -> variable for a name/initials input and a variable for submit button
+  // !Initials and score get stored in local storage -> variable for a name/initials input and a variable for submit button
   // User is taken to the high scores page
-  // High scores are listed, sorted highest to lowest
+  // !High scores are listed, sorted highest to lowest -> need variable for feedback page
   // User has option to take the quiz again
