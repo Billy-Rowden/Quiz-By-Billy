@@ -8,6 +8,42 @@ const inputInitials = document.getElementById('initials');
 const submitButton = document.getElementById('submit');
 const feedback = document.getElementById('feedback');
 
+let timer;
+let timeLeft = 60; 
+let currentQuestionIndex = 0;
+let score = 0;
+
+function startQuiz() {
+    
+}
+
+function showQuestion() {
+    
+}
+
+function checkAnswer(index) {
+
+}
+
+function startTimer() {
+
+}
+
+function endQuiz() {
+
+}
+
+startButton.addEventListener('click', startQuiz);
+
+submitButton.addEventListener('click', () => {
+    const initials = inputInitials.value.trim();
+    if (initials !== '') {
+        window.location.href = 'highschore.html';
+    } else {
+        alert('Please enter your initials.');
+    }
+});
+
 
 // Each question needs the following:
   // Question text
