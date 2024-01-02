@@ -43,7 +43,31 @@ function showQuestion() {
 }
 
 function checkAnswer(index) {
+  const correctAnswer = currentQuestion.answer;
+  const correctSound = new Audio('./assets/sfx/correct.wav');
+  const incorrectSound = new Audio ('./assets/sfx/incorrect.wav')
 
+  if (index === correctAnswer) {
+    score += 10;
+    feedback.textContent = 'Correct!';
+    correctSound.play();
+  } else {
+      timeLeft -= 10;
+      feedback.textContent = 'Wrong! -10 seconds';
+      incorrectSound.play();
+  }
+
+  feedback.classList.remove('hide');
+  setTimeout(() => {
+    feedback.classList.add('hide');
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex < questions.length) {
+      showQuestion();
+    } else {
+      endQuiz();
+    }
+  }, 1000);
 };
 
 function startTimer() {
