@@ -1,4 +1,4 @@
-const getElement = (id) => document.getElementById(id);
+const getElement = (id) => document.getElementById(id); // refactored code to make variables list more readable
 
 const startButton = getElement('start');
 const displayTime = getElement('time');
@@ -10,11 +10,11 @@ const inputInitials = getElement('initials');
 const submitButton = getElement('submit');
 const feedback = getElement('feedback');
 
-startButton.addEventListener('click', startQuiz);
+startButton.addEventListener('click', startQuiz); // button to start the quiz
 
 let timer;
-let timeLeft = 60; 
-let currentQuestionIndex = 0;
+let timeLeft = 60; // defines the amount of time at the start of the quiz
+let currentQuestionIndex = 0; // starts at question 1 or position 0 of the questions array
 let score = 0;
 
 const hideElement = (element) => element.classList.add('hide');
@@ -22,15 +22,16 @@ const showElement = (element) => element.classList.remove('hide');
 
 function startQuiz() {
     startButton.style.display = 'none';
-    hideElement(getElement('start-screen'));
+    // hides the start screen and shows the questions, and starts the timer counting down
+    hideElement(getElement('start-screen')); 
     showElement(getElement('questions'));
     showQuestion();
     startTimer();
 }
 
 function showQuestion() {
-  const currentQuestion = questions[currentQuestionIndex];
-  questionTitle.textContent = currentQuestion.title;
+  const currentQuestion = questions[currentQuestionIndex]; // shows the current question
+  questionTitle.textContent = currentQuestion.title; // shows the title element of the current question object in the questions array
   choices.innerHTML = '';
 
   currentQuestion.choices.forEach((choice, index) => {
@@ -83,6 +84,7 @@ function checkAnswer(index) {
   }, 1000);
 };
 
+//function to start a timer counting down in 1 second increments, and to end quiz if the timer hits 0 or less.
 function startTimer() {
   timer = setInterval(() => {
     timeLeft--;
@@ -94,6 +96,7 @@ function startTimer() {
 }, 1000);
 };
 
+// function where if the timer hits 0, the timer is cleared, the questions are hidden, and the end screen is shown along with the user's final score
 function endQuiz() {
   clearInterval(timer);
   hideElement(getElement('questions'));
@@ -101,6 +104,7 @@ function endQuiz() {
   finalScore.textContent = score;
 };
 
+// Adds a button for the user to add their initials and then stores the initials and score data in an object
 submitButton.addEventListener('click', () => {
   const initials = inputInitials.value.trim();
   const scoreData = {
@@ -108,6 +112,7 @@ submitButton.addEventListener('click', () => {
     score: score
     };
 
+    // stores the scores in descending order to local storage and changes the screen to show the highscore HTML page.
     let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
     highScores.push(scoreData);
     highScores.sort((a, b) => b.score - a.score);

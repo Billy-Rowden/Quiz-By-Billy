@@ -4,15 +4,16 @@ document.addEventListener('DOMContentLoaded', function() {
   const highscoresList = getElement('highscores');
   const clearButton = getElement('clear');
 
+  // creates a button for the user to clear the list of highscores and asks them to confirm if they want to.
   clearButton.addEventListener('click', () => {
     if (confirm('Are you sure you want to clear the high scores?')) {
-      localStorage.removeItem('highScores');
+      localStorage.removeItem('highScores'); // removes high scores list from local storage
       renderHighscores();
     }
   });
 
   renderHighscores(); 
-
+// this function displays the highscore on the highscores webpage
   function renderHighscores() {;
     highscoresList.innerHTML = '';
 
