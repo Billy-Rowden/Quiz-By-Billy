@@ -37,8 +37,19 @@ function showQuestion() {
     const button = document.createElement('button');
     button.textContent = `${index + 1}. ${choice}`;
     button.classList.add('choice');
-    button.onclick = () => checkAnswer(index);
+    button.onclick = () => {
+      checkAnswer(index);
+      disableButtons(); // disables a button so that the user cannot spam the buttons to gain more points from one question or lose more than 10 seconds per wrong answer.
+    };
     choices.appendChild(button);
+  });
+}
+
+// function to disable the buttons for all choices once the user selects 1.
+function disableButtons() {
+  const buttons = document.querySelectorAll('.choice');
+  buttons.forEach(button => {
+    button.disabled = true;
   });
 }
 
@@ -48,6 +59,7 @@ function checkAnswer(index) {
   const correctSound = new Audio('./assets/sfx/correct.wav');
   const incorrectSound = new Audio('./assets/sfx/incorrect.wav')
 
+// if loop to give 10 points to user for a correct answer, or lose 10 seconds for an incorrect answer.
   if (index === correctAnswer) {
     score += 10;
     feedback.textContent = 'Correct!';
