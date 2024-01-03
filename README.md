@@ -55,7 +55,7 @@ Research on websites including W3Schools, MDN web docs and FreeCodeCamp viewing 
 
 ## Features
 
-This is a collection of javascript code that uses for loops, if statements, functions and objects to create a quiz for a user. It features multiple html files and js files. 
+This is a collection of javascript code that uses for loops, if statements, functions, arrays, objects and other JS features to create a quiz for the user. It features multiple HTML files and JS files. 
 
 ## Contributions
 
