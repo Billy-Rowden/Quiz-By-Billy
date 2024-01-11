@@ -49,9 +49,9 @@ Research on websites including W3Schools, MDN web docs and FreeCodeCamp viewing 
 
 ## Badges
 
-![badmath](https://img.shields.io/badge/Javascript-65.2-blue)
-![badmath](https://img.shields.io/badge/HTML-22.8-orange)
-![badmath](https://img.shields.io/badge/CSS-12.0-purple)
+![badmath](https://img.shields.io/badge/Javascript-70.5-blue)
+![badmath](https://img.shields.io/badge/HTML-19.3-orange)
+![badmath](https://img.shields.io/badge/CSS-10.2-purple)
 
 ## Features
 
